@@ -1,0 +1,52 @@
+[
+  {
+    "source_system": "brandenburg_luis",
+    "source_id": "fixture-bb-101",
+    "signal_type": "solar_park",
+    "title": "Aufstellungsbeschluss Bebauungsplan Solarpark Beispiel",
+    "publication_date": "2026-09-15",
+    "source_url": "https://luis.brandenburg.de/beispiel/101",
+    "municipality": "Potsdam",
+    "state": "Brandenburg",
+    "geo_status": "confirmed_brandenburg",
+    "longitude": null,
+    "latitude": null,
+    "geom_wkt": null,
+    "quality_flags": []
+  },
+  {
+    "source_system": "brandenburg_luis",
+    "source_id": "fixture-bb-102",
+    "signal_type": "hyperscale_dc_inquiry",
+    "title": "Bebauungsplan Rechenzentrum Beispiel",
+    "publication_date": "2026-09-22",
+    "source_url": "https://luis.brandenburg.de/beispiel/102",
+    "municipality": "Oranienburg",
+    "state": "Brandenburg",
+    "geo_status": "confirmed_brandenburg",
+    "longitude": null,
+    "latitude": null,
+    "geom_wkt": null,
+    "quality_flags": [
+      "hyperscale_unverified"
+    ]
+  },
+  {
+    "source_system": "brandenburg_luis",
+    "source_id": "fixture-unknown",
+    "signal_type": "solar_park",
+    "title": "Bebauungsplan Photovoltaik Beispiel",
+    "publication_date": null,
+    "source_url": "https://luis.brandenburg.de/beispiel/103",
+    "municipality": null,
+    "state": null,
+    "geo_status": "unresolved",
+    "longitude": null,
+    "latitude": null,
+    "geom_wkt": null,
+    "quality_flags": [
+      "publication_date_missing_or_invalid",
+      "geography_unverified"
+    ]
+  }
+]
