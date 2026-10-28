@@ -1,0 +1,19 @@
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_DB: iris_test
+      POSTGRES_USER: iris_test
+      POSTGRES_PASSWORD: local_test_only
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - iris_test_data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U iris_test -d iris_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+volumes:
+  iris_test_data:

@@ -126,7 +126,7 @@ def ingest(conn, records):
      state,geo_status,quality_flags,geom,observed_at)
     VALUES (%(source_system)s,%(source_id)s,%(signal_type)s,%(title)s,%(publication_date)s,
       %(source_url)s,%(municipality)s,%(state)s,%(geo_status)s,%(quality_flags)s,
-      CASE WHEN %(geom_wkt)s IS NULL THEN NULL ELSE ST_GeomFromText(%(geom_wkt)s,25832) END,NOW())
+      ST_GeomFromText(%(geom_wkt)s::text, 25832),NOW())
     ON CONFLICT (source_system,source_id,signal_type) DO UPDATE SET
       title=EXCLUDED.title,publication_date=COALESCE(EXCLUDED.publication_date,iris_staging.signal_ingest.publication_date),
       source_url=EXCLUDED.source_url,municipality=EXCLUDED.municipality,state=EXCLUDED.state,
